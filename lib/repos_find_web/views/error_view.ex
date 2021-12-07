@@ -1,5 +1,5 @@
-defmodule ReadgithubapiWeb.ErrorView do
-  use ReadgithubapiWeb, :view
+defmodule ReposFindWeb.ErrorView do
+  use ReposFindWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

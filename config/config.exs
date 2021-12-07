@@ -7,15 +7,15 @@
 # General application configuration
 import Config
 
-config :readgithubapi,
-  ecto_repos: [Readgithubapi.Repo]
+config :repos_find,
+  ecto_repos: [ReposFind.Repo]
 
 # Configures the endpoint
-config :readgithubapi, ReadgithubapiWeb.Endpoint,
+config :repos_find, ReposFindWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: ReadgithubapiWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: Readgithubapi.PubSub,
-  live_view: [signing_salt: "dgy1x8/s"]
+  render_errors: [view: ReposFindWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: ReposFind.PubSub,
+  live_view: [signing_salt: "NFCbb2OS"]
 
 # Configures Elixir's Logger
 config :logger, :console,

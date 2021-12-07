@@ -5,19 +5,19 @@ import Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :readgithubapi, Readgithubapi.Repo,
+config :repos_find, ReposFind.Repo,
   username: "postgres",
   password: "postgres",
-  database: "readgithubapi_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "repos_find_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :readgithubapi, ReadgithubapiWeb.Endpoint,
+config :repos_find, ReposFindWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "5H3aeLDLrT+++xikibBY2Qcpr6VIWb0lb+NzZj9mKoZhr908crsV29G1RK6E6dx1",
+  secret_key_base: "zpgiJqNQNj0u6gZJTiVIa1knnxY6wD38aqG5NoYMwYxsyMfjlLYtUkrXRkNk0L4X",
   server: false
 
 # Print only warnings and errors during test

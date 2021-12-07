@@ -1,10 +1,10 @@
 import Config
 
 # Configure your database
-config :readgithubapi, Readgithubapi.Repo,
+config :repos_find, ReposFind.Repo,
   username: "postgres",
   password: "postgres",
-  database: "readgithubapi_dev",
+  database: "repos_find_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,14 +15,14 @@ config :readgithubapi, Readgithubapi.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :readgithubapi, ReadgithubapiWeb.Endpoint,
+config :repos_find, ReposFindWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "WBQDp4pGHsQjP67JIJLbLAunkc109HqolVnLNyVk+Z0tgyX1SzXFyjLJgB8TGKKx",
+  secret_key_base: "Jz89d1qq8C/FYbeODAsbqleuP23rtPODVh/xd82Ob/H1klMF0/zHYSBidbyojd5G",
   watchers: []
 
 # ## SSL Support

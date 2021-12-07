@@ -1,4 +1,4 @@
-# Readgithubapi
+# ReposFind
 
 To start your Phoenix server:
 

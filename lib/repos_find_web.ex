@@ -1,12 +1,12 @@
-defmodule ReadgithubapiWeb do
+defmodule ReposFindWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use ReadgithubapiWeb, :controller
-      use ReadgithubapiWeb, :view
+      use ReposFindWeb, :controller
+      use ReposFindWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule ReadgithubapiWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: ReadgithubapiWeb
+      use Phoenix.Controller, namespace: ReposFindWeb
 
       import Plug.Conn
-      import ReadgithubapiWeb.Gettext
-      alias ReadgithubapiWeb.Router.Helpers, as: Routes
+      import ReposFindWeb.Gettext
+      alias ReposFindWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/readgithubapi_web/templates",
-        namespace: ReadgithubapiWeb
+        root: "lib/repos_find_web/templates",
+        namespace: ReposFindWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule ReadgithubapiWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import ReadgithubapiWeb.Gettext
+      import ReposFindWeb.Gettext
     end
   end
 
@@ -63,9 +63,9 @@ defmodule ReadgithubapiWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import ReadgithubapiWeb.ErrorHelpers
-      import ReadgithubapiWeb.Gettext
-      alias ReadgithubapiWeb.Router.Helpers, as: Routes
+      import ReposFindWeb.ErrorHelpers
+      import ReposFindWeb.Gettext
+      alias ReposFindWeb.Router.Helpers, as: Routes
     end
   end
 

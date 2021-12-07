@@ -14,7 +14,7 @@ if config_env() == :prod do
       For example: ecto://USER:PASS@HOST/DATABASE
       """
 
-  config :readgithubapi, Readgithubapi.Repo,
+  config :repos_find, ReposFind.Repo,
     # ssl: true,
     # socket_options: [:inet6],
     url: database_url,
@@ -32,7 +32,7 @@ if config_env() == :prod do
       You can generate one by calling: mix phx.gen.secret
       """
 
-  config :readgithubapi, ReadgithubapiWeb.Endpoint,
+  config :repos_find, ReposFindWeb.Endpoint,
     http: [
       # Enable IPv6 and bind on all interfaces.
       # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
@@ -48,7 +48,7 @@ if config_env() == :prod do
   # If you are doing OTP releases, you need to instruct Phoenix
   # to start each relevant endpoint:
   #
-  #     config :readgithubapi, ReadgithubapiWeb.Endpoint, server: true
+  #     config :repos_find, ReposFindWeb.Endpoint, server: true
   #
   # Then you can assemble a release by calling `mix release`.
   # See `mix help release` for more information.

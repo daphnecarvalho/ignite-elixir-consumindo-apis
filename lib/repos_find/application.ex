@@ -1,4 +1,4 @@
-defmodule Readgithubapi.Application do
+defmodule ReposFind.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,20 +9,20 @@ defmodule Readgithubapi.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      Readgithubapi.Repo,
+      ReposFind.Repo,
       # Start the Telemetry supervisor
-      ReadgithubapiWeb.Telemetry,
+      ReposFindWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Readgithubapi.PubSub},
+      {Phoenix.PubSub, name: ReposFind.PubSub},
       # Start the Endpoint (http/https)
-      ReadgithubapiWeb.Endpoint
-      # Start a worker by calling: Readgithubapi.Worker.start_link(arg)
-      # {Readgithubapi.Worker, arg}
+      ReposFindWeb.Endpoint
+      # Start a worker by calling: ReposFind.Worker.start_link(arg)
+      # {ReposFind.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Readgithubapi.Supervisor]
+    opts = [strategy: :one_for_one, name: ReposFind.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -30,7 +30,7 @@ defmodule Readgithubapi.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    ReadgithubapiWeb.Endpoint.config_change(changed, removed)
+    ReposFindWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

@@ -1,11 +1,11 @@
-defmodule ReadgithubapiWeb.Router do
-  use ReadgithubapiWeb, :router
+defmodule ReposFindWeb.Router do
+  use ReposFindWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", ReadgithubapiWeb do
+  scope "/api", ReposFindWeb do
     pipe_through :api
   end
 
@@ -21,7 +21,7 @@ defmodule ReadgithubapiWeb.Router do
 
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: ReadgithubapiWeb.Telemetry
+      live_dashboard "/dashboard", metrics: ReposFindWeb.Telemetry
     end
   end
 end
