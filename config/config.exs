@@ -10,6 +10,8 @@ import Config
 config :repos_find,
   ecto_repos: [ReposFind.Repo]
 
+config :repos_find, ReposFind.Repositories.Get, github_repos_adapter: ReposFind.Github.Client
+
 # Configures the endpoint
 config :repos_find, ReposFindWeb.Endpoint,
   url: [host: "localhost"],
