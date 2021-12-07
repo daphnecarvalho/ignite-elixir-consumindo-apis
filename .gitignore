@@ -23,5 +23,3 @@ erl_crash.dump
 repos_find-*.tar
 
 /.elixir_ls
-
-/old
