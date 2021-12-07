@@ -56,7 +56,8 @@ defmodule ReposFind.MixProject do
       {:tesla, "~> 1.4"},
       {:hackney, "~> 1.17"},
       {:bypass, "~> 2.1", only: :test},
-      {:mox, "~> 1.0", only: :test}
+      {:mox, "~> 1.0", only: :test},
+      {:json, "~> 1.4"}
     ]
   end
 

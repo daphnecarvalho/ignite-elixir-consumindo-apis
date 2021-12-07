@@ -13,6 +13,8 @@ config :repos_find, ReposFind.Repo,
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
+config :repos_find, ReposFind.Repositories.Get, github_repos_adapter: ReposFind.Github.ClientMock
+
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :repos_find, ReposFindWeb.Endpoint,
