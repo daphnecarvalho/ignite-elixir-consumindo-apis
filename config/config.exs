@@ -12,6 +12,18 @@ config :repos_find,
 
 config :repos_find, ReposFind.Repositories.Get, github_repos_adapter: ReposFind.Github.Client
 
+config :repos_find, ReposFind.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
+config :repos_find, ReposFindWeb.Auth.Guardian,
+  issuer: "repos_find",
+  secret_key: "pMf78XlCynd00vytPxYr2WQdBCRFSTTu/sQjiu3Bu20Yvf7IsZAOfqUCGt2zfb8t"
+
+config :repos_find, ReposFindWeb.Auth.Pipeline,
+  module: ReposFindWeb.Auth.Guardian,
+  error_handler: ReposFindWeb.Auth.ErrorHandler
+
 # Configures the endpoint
 config :repos_find, ReposFindWeb.Endpoint,
   url: [host: "localhost"],

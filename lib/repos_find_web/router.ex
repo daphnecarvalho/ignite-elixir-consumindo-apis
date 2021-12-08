@@ -1,14 +1,31 @@
 defmodule ReposFindWeb.Router do
   use ReposFindWeb, :router
 
+  alias ReposFindWeb.Plugs.UUIDChecker
+
   pipeline :api do
     plug :accepts, ["json"]
+    plug UUIDChecker
+  end
+
+  pipeline :auth do
+    plug ReposFindWeb.Auth.Pipeline
+  end
+
+  scope "/api", ReposFindWeb do
+    pipe_through [:api, :auth]
+
+    resources "/users", UsersController, except: [:new, :edit, :create]
+
+    get "/repos", RepositoriesController, :index
+    get "/repos/:username", RepositoriesController, :show
   end
 
   scope "/api", ReposFindWeb do
     pipe_through :api
 
-    get "/repos/:username", RepositoriesController, :show
+    post "/users/", UsersController, :create
+    post "/users/signin", UsersController, :sign_in
   end
 
   # Enables LiveDashboard only for development

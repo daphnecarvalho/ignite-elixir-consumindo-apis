@@ -10,4 +10,11 @@ defmodule ReposFindWeb.FallbackController do
     |> put_view(ErrorView)
     |> render("error.json", result: result)
   end
+
+  def call(connection, {:error, reason}) do
+    connection
+    |> put_status(:bad_request)
+    |> put_view(ErrorView)
+    |> render("error.json", result: reason)
+  end
 end
