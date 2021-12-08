@@ -15,6 +15,8 @@ defmodule ReposFindWeb.Router do
   scope "/api", ReposFindWeb do
     pipe_through [:api, :auth]
 
+    get "/users/signout", UsersController, :sign_out
+    get "/users/current_token", UsersController, :current_token
     resources "/users", UsersController, except: [:new, :edit, :create]
 
     get "/repos", RepositoriesController, :index

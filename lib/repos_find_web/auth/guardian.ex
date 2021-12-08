@@ -11,7 +11,8 @@ defmodule ReposFindWeb.Auth.Guardian do
   def authenticate(%{"username" => username, "password" => password}) do
     with {:ok, %User{password_hash: password_hash} = user} <- UserGet.by_username(username),
          true <- Pbkdf2.verify_pass(password, password_hash),
-         {:ok, token, _claims} <- encode_and_sign(user) do
+         {:ok, token, _claims} <-
+           encode_and_sign(user, %{}, ttl: {1, :minute}) do
       {:ok, token}
     else
       false -> {:error, Error.build(:unauthorized, "Please verify your credentials!")}
