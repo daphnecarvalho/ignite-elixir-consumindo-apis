@@ -18,8 +18,8 @@ defmodule ReposFind.Github.ClientTest do
 
       url = endpoint_url(bypass.port)
 
-      {:ok, body} =
-        JSON.encode([
+      body =
+        Jason.encode!([
           %{
             created_at: "2016-12-20T16:25:28",
             description: nil,
