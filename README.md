@@ -9,9 +9,9 @@ http://localhost:4000/
 ### /api/users
 * [<span style="color:#663399">GET</span>] / 
   + ReposFindWeb.UsersController :index
-* [<span style="color:#663399">GET</span>] /signin
+* [<span style="color:#79c900">POST</span>] /sigin
   + ReposFindWeb.UsersController :sign_in
-* [<span style="color:#663399">GET</span>] /sign_out
+* [<span style="color:#663399">GET</span>] /signout
   + ReposFindWeb.UsersController :sign_out
 * [<span style="color:#663399">GET</span>] /current_token
   + ReposFindWeb.UsersController :current_token
