@@ -1,6 +1,6 @@
 # ReposFind - Challenge: Consuming APIs
 
-Instructions: [Consumindo APIs](https://www.notion.so/Desafio-01-Consumindo-APIs-59b66c4fc14147ff82a6e73b9ce23e85).
+Instructions: [Consumindo APIs](https://www.notion.so/Desafio-01-Consumindo-APIs-59b66c4fc14147ff82a6e73b9ce23e85), [Testando requisições com bypass](https://www.notion.so/Desafio-02-Testando-requisi-es-com-bypass-e67ba498dee64089ac32e872812d20f6), [Autenticação JWT](https://www.notion.so/Desafio-01-Autentica-o-JWT-5c2fd6b53afb41b8b9f053deedecdf2f) and [Token refresh](https://www.notion.so/Desafio-02-Token-refresh-09ab7b3c0254453893faa39f3fa94ccf).
 
 ## Base URL
 http://localhost:4000/
