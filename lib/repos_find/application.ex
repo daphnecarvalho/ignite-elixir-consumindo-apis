@@ -15,7 +15,8 @@ defmodule ReposFind.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: ReposFind.PubSub},
       # Start the Endpoint (http/https)
-      ReposFindWeb.Endpoint
+      ReposFindWeb.Endpoint,
+      {Guardian.DB.Token.SweeperServer, []}
       # Start a worker by calling: ReposFind.Worker.start_link(arg)
       # {ReposFind.Worker, arg}
     ]

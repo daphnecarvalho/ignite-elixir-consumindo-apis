@@ -55,6 +55,7 @@ defmodule ReposFind.MixProject do
       {:hackney, "~> 1.17"},
       {:pbkdf2_elixir, "~> 1.4"},
       {:guardian, "~> 2.0"},
+      {:guardian_db, "~> 2.0"},
 
       # DEV TEST
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},

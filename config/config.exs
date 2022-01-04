@@ -20,6 +20,12 @@ config :repos_find, ReposFindWeb.Auth.Guardian,
   issuer: "repos_find",
   secret_key: "pMf78XlCynd00vytPxYr2WQdBCRFSTTu/sQjiu3Bu20Yvf7IsZAOfqUCGt2zfb8t"
 
+config :guardian, Guardian.DB,
+  repo: ReposFind.Repo,
+  schema_name: "guardian_tokens",
+  # token_types: ["refresh_token"],
+  sweep_interval: 1
+
 config :repos_find, ReposFindWeb.Auth.Pipeline,
   module: ReposFindWeb.Auth.Guardian,
   error_handler: ReposFindWeb.Auth.ErrorHandler
